@@ -1,0 +1,298 @@
+.form-check-inline input {text-align: center;width: 91px;height: 36px;font-family: DM Sans;font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.form-check-inline {position: relative;}
+.form-check-inline button.plus {position: absolute;top: 6px;left: 0px;background: none;border: none;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.form-check-inline button.minus {position: absolute;top:6px;right: 0px;background: none;border: none;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.itemdetail h2 {margin: 0;}
+.itemimg img {width:60px; height: auto;}
+.itemimg {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+}
+.itemdetail {
+    display: inline-block;
+    width: 60%;
+}
+.item{background: #FFFFFF;border: 1px solid #EAEAEA;box-sizing: border-box;border-radius: 10px; padding: 15px;position: relative; margin-bottom: 20px; margin-right: 5px;}
+.totalammount {
+    display:block;
+    text-align: right;
+}
+.quantity {
+  display: inline-block;
+}
+.subtotalammount {display: inline-block;}
+.totalammount span, .subtotalammount span{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #456CF3;}
+.delete {position: absolute;top: 48px; right: 64px; background-color: transparent;border: none; box-shadow: none;}
+.itemlist {
+    width: 100%;
+    min-height: 500px;
+    max-height: 530px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#C4D1FF; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C4D1FF; 
+  }
+  .summary {border-radius: 5px; padding: 20px 20px 0 20px;}
+  .summary ul {padding: 0;}
+  .summary li {height: 50px;font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 18px;line-height: 25px;color: rgba(80, 84, 87, 0.75); list-style: none;}
+  .summary li span {font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 18px;line-height: 25px;float: right;color: #072139;}
+  .summary .total {background: #C4D1FF;border-radius: 0px 0px 6px 6px;padding: 12px 20px 20px;margin-left: -20px;margin-right: -20px;}
+  .summary .total span{font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 18px;line-height: 25px;color: #456CF3;}
+  .form-select, .mat-form-field-flex.ng-tns-c162-0{background-color: #EEF1F5; border: none;width: 100px;height: 50px;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: #072139; border-radius: 4px; margin-left: 20px;}
+  .pickupdetail h2 {font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;color: #072139;}
+  
+  .pickupdetail {padding: 30px 0;}
+  .paymentbtn {width: 100%; height: 60px;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 18px;line-height: 23px;text-align: center;color: #EFEFEF;background: #456CF3;box-shadow: 0px 20px 40px rgba(38, 124, 242, 0.15);border-radius: 6px; border: none;margin-top: 50px; padding: 0;}
+  section {padding: 70px 0;}
+  .nav-tabs li a.active.show {background: none; font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 14px;letter-spacing: 0.02em;text-transform: uppercase;color: #456CF3;}
+  button .nav-tabs li a.active.show {background: none; font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size:24px;letter-spacing: 0.02em;text-transform: uppercase;color: #fff;}
+  .bs-example.bs-example-tabs {position: relative;background: #FFFFFF;border-radius: 5px;width: 100%;max-width: 470px;margin: 0 auto;}
+  button .bs-example.bs-example-tabs {position: relative;background: none;}
+  .nav-tabs {border-bottom: none;}
+  .bs-example.bs-example-tabs::after{position: absolute;border: 1px dashed rgba(7, 33, 57, 0.5);content: '';top: 19px;left: 44%;width: 80px;}
+  button .bs-example.bs-example-tabs::after{position: relative;border:none;content: inherit;}
+  .nav-tabs li a {font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 14px;letter-spacing: 0.02em;text-transform: uppercase;color: rgba(7, 33, 57, 0.5);}
+  button .nav-tabs li a {font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 24px;letter-spacing: 0.02em;text-transform: uppercase;color: #fff;}
+  .paymentform label{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: #072139;display: block;}
+  .paymentform .formgroup{margin-bottom: 20px;}
+  .paymentform input{background: #FFFFFF;border-radius: 5px; border: none;height: 50px; width: 100%; padding-left: 10px;}
+  .paymentform {background: #F0F7FC;border: 1px solid #EAEAEA;box-sizing: border-box;border-radius: 10px; padding: 30px;}
+  .paymentform input::placeholder{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: rgba(7, 33, 57, 0.2);}
+  .paymentmethod h2 span {float: right; font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;color: #456CF3;}
+  .paymentmethod{ width: 100%; max-width: 445px; margin: 0 auto;}
+  .paymentform .formgroup select.form-select {width: 100%;max-width: 100%;margin: 0 !important;padding-left: 10px; background: #fff;font-weight: 500;font-size: 14px;}
+  .paymentform input#terms {width: 15px;height: 15px;display: inline-block;vertical-align: middle;margin-right: 5px;}
+  .paymentform label.checkbox {display: inline-block !important;width: auto;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: #072139;}
+  .paymentform p {font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 18px;color: rgba(7, 33, 57, 0.5);}
+  .paymentform .wrapper{width:200px;padding:20px;height: 150px;}
+   select.form-control {height: 50px !important;border: none;margin-bottom: 20px;}
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 767px){
+
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+ 
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    .bs-example.bs-example-tabs::after {width: 40px !important;left: 46%;}
+    .itemlist .item{text-align: center;}
+    .paymentform .formgroup select.form-select {margin-bottom: 20px !important;}
+    .detailandpayment .nav-tabs li a.active.show{line-height: 1 !important; padding: 12px 0;}
+    .itemdetail{ width: 70%;}
+    .delete {right: 15px;}
+    .paymentform label.checkbox{line-height: 15px !important;width: 200px !important;}
+    .itemdetail h2 {margin: 0;font-size: 18px;}
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+}
+/**********
+iPad 3
+**********/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+
+@media only screen  and (min-width : 1600px) and (max-device-width : 1680px) { 
+
+}
+@media only screen  and (min-width : 1366px)  { 
+
+}
+@media only screen  and (min-width : 1280px) and (max-device-width : 1599px) { 
+
+
+}
+@media only screen  and (min-width : 1921px) and (max-device-width : 2560px) {
+
+
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px)  {
+  .itemdetail {width: 68%;}
+
+}
+
+/* Large screens ----------- */
+@media only screen  and (max-width : 1824px) {
+
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+  
+
+}
+
+@media only screen and (min-device-width : 420px) and (max-device-width : 540px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+  
+  /*redirect page css end*/
+
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+  
+
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  
+}
+
+/* iPhone 6, 7, 8 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+ 
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+
+}
+
+/* iPhone 6+, 7+, 8+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+
+}
+
+/* iPhone X ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+/* iPhone XS Max, XR ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+  @media only screen and (max-width: 575px){
+    .itemlist {min-height: 320px; max-height: 320px;}
+    .itemimg {display: block;}
+    .totalammount {text-align: left;display: inline-block;}
+    .paymentform .formgroup select.form-select {margin-bottom: 20px !important;}
+    .detailandpayment .nav-tabs li a.active.show{line-height: 1 !important; padding: 12px 0;}
+    .itemdetail{ width: 70%;}
+    .delete {right: 15px; top: 10px;}
+    .bs-example.bs-example-tabs::after {width: 60px;}
+    .ammount{display: block;text-align: center;margin: 5px 0;}
+    #shopingbag .itemlist .item {text-align: center;}
+    form{padding: 20px;}
+    .form-select, .mat-form-field-flex {width: 100%; margin-left: 0;}
+    .paymentform label.checkbox {line-height: 16px;width: 230px;}
+    .paymentform input#terms {vertical-align: top;}
+  }
+  button.signupbtn {
+    width: 100%;
+    color: #000;
+    font-size: 24px;
+    border: none;
+    box-shadow: none;
+    background-color: #456CF3;
+    border-radius: 4px;
+}
+.paymentbtn:disabled,
+.paymentbtn[disabled],
+button.signupbtn:disabled,
+button.signupbtn[disabled]{
+  border-radius: 4px;
+  background-color: #cccccc;
+  color: #666666;
+}
+button .nav-tabs li{width: 100% !important;
+  text-align: center !important;
+  height: 62px !important;
+  line-height: 60px !important;}

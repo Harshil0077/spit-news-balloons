@@ -1,0 +1,53 @@
+<section class="cardmanage">
+    <div class="paymentmethod">
+        <h2>Add New Card</h2>
+        <form class="paymentform">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="formgroup">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="0000-0000-0000-000">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="formgroup">
+                        <label>Card holder (Name on card)</label>
+                        <input type="text" placeholder="John Smith">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="formgroup">
+                        <label>Expire (Valid untill)</label>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <select class="form-select form-control" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                                    <option selected>MM</option>
+                                    <option value="1" *ngFor="let month of months">{{month.month}}</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <select class="form-select dropdown" aria-label="Default select example" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                                    <option selected>YY</option>
+                                    <option  *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="password" placeholder="CVV" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <input type="checkbox" id="terms" name="terms" value="">
+                    <label class="checkbox" for="terms"> Securely save this card for faster payments.</label><br>
+                    <p>This transaction you make is totally secure. We don't save your CVV number.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="button addcard" routerLink="/card/cardList">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

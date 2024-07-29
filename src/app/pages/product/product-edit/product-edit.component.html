@@ -1,0 +1,100 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h2>Edit Product</h2>
+            </li>
+            <li class="nav-item right-btn">
+                <a href="/pages/product/product-list" routerlink="/pages/product/product-list" class="btn nav-link" ng-reflect-router-link="/pages/product/product-list">Back</a>
+            </li>
+        </ul>
+        </nav>
+        <div style="width: 900px; margin: auto;">
+            <div class="submit-form">
+                <form [formGroup]="form">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg" [hidden]="isShowDiv">
+                            <label for="name">Product Name</label>
+                            <input class="form-control" placeholder="Product Name" [(ngModel)]="product.product_name" formControlName="product_name" name="Product Name" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.product_name.errors) || (!form.controls.product_name.pristine && form.controls.product_name.invalid) }" disabled>
+                            <div *ngIf="isFormSubmitted && form.controls['product_name'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['product_name'].errors.required">
+                                    Product Name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group input-group-lg" [hidden]="isNotShowDiv">
+                            <label for="name">Product Name</label>
+                            <input class="form-control" placeholder="Product Name" [(ngModel)]="product.product_name" formControlName="product_name" name="Product Name" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.product_name.errors) || (!form.controls.product_name.pristine && form.controls.product_name.invalid) }">
+                            <div *ngIf="isFormSubmitted && form.controls['product_name'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['product_name'].errors.required">
+                                    Product Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg" [hidden]="isShowDiv">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" placeholder="Description" [(ngModel)]="product.description" formControlName="description" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.description.errors) || (!form.controls.description.pristine && form.controls.description.invalid) }" disabled></textarea>
+                            <div *ngIf="isFormSubmitted && form.controls['description'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['description'].errors.required">
+                                    Description Name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group input-group-lg" [hidden]="isNotShowDiv">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" placeholder="Description" [(ngModel)]="product.description" formControlName="description" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.description.errors) || (!form.controls.description.pristine && form.controls.description.invalid) }"></textarea>
+                            <div *ngIf="isFormSubmitted && form.controls['description'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['description'].errors.required">
+                                    Description Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" [hidden]="isShowDiv"  *ngFor="let heliums of product.heliums">
+                        <div class="form-group input-group-lg">
+                            <div class="heliumselect">
+                                <label for="{{heliums.helium_id}}">{{heliums.helium_id == 1 ? 'Heliums' : 'Non-Heliums'}} Price</label>
+                                <input type="price"  class="form-control" placeholder="Price"  name="price" [(ngModel)]="heliums.price" disabled [ngModelOptions]="{standalone: true}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" [hidden]="isNotShowDiv">
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <div class="heliumselect">
+                                <label for="Helium">Helium Price</label>
+                                <input type="price" id="1" class="form-control" name="price" formControlName="Hprice"  placeholder="Price" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <div class="heliumselect">
+                                <label for="Non-Helium">Non-Helium Price</label>
+                                <input type="price" id="2" class="form-control" name="price" formControlName="NHprice"  placeholder="Price" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button (click)=toggleDisplayDiv() [hidden]="isShowDiv" class="btn btn-info" style="margin-left: 10px;">Update</button>
+                    <button [hidden]="isNotShowDiv" (click)="submitForm()" class="btn btn-info" style="margin-left: 10px;">Save</button>
+                </div>
+                <div class="progress-loader" [hidden]="!loading">
+                <div class="loading-spinner">
+                    <img src="assets/images/loader.png">
+                    <span class="loading-message">Progress {{percentDone}} %</span>
+                </div>
+            </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

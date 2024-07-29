@@ -1,0 +1,134 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h2>Create Product</h2>
+            </li>
+            <li class="nav-item right-btn">
+                <a href="/pages/product/product-list" routerlink="/pages/product/product-list" class="btn nav-link" ng-reflect-router-link="/pages/product/product-list">Back</a>
+            </li>
+        </ul>
+        </nav>
+        <div style="width: 900px; margin: auto;">
+            <div class="submit-form">
+                <form [formGroup]="form" (ngSubmit)="submitForm()">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <label for="name">Product Name</label>
+                            <input class="form-control" placeholder="Product Name" formControlName="product_name" name="Product Name" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.product_name.errors) || (!form.controls.product_name.pristine && form.controls.product_name.invalid) }">
+                            <div *ngIf="isFormSubmitted && form.controls['product_name'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['product_name'].errors.required">
+                                    Product Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" placeholder="Description" formControlName="description" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.description.errors) || (!form.controls.description.pristine && form.controls.description.invalid) }"></textarea>
+                            <div *ngIf="isFormSubmitted && form.controls['description'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['description'].errors.required">
+                                    Description Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <label for="name">Main Product Image</label>
+                            <input type="file" (change)="uploadFile($event)" id="product_main_image" name="product_main_image" class="form-control" accept=".png, .jpeg, .jpg" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.product_main_image.errors) || (!form.controls.product_main_image.pristine && form.controls.product_main_image.invalid) }">
+                            <div *ngIf="isFormSubmitted && form.controls['product_main_image'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['product_main_image'].errors.required">
+                                    Product Main Image Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <label for="tours">Category</label>
+                            <ng-multiselect-dropdown 
+                                [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.category_id.errors) || (!form.controls.category_id.pristine && form.controls.category_id.invalid) }"
+                                [placeholder]="'Select Category'"
+                                [data]="dropdownList" [(ngModel)]="selectedItems"
+                                formControlName="category_id" 
+                                [settings]="dropdownSettings"
+                                (onSelect)="onItemSelect($event)"
+                                (onDeSelect)="onItemDeSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                                id="category_id"
+                                >
+                            </ng-multiselect-dropdown>
+                            <div *ngIf="isFormSubmitted && form.controls['category_id'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['category_id'].errors.required">
+                                    Category Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <label for="Subcategory">Subcategory</label>
+                            <ng-multiselect-dropdown 
+                                [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.sub_cat.errors) || (!form.controls.sub_cat.pristine && form.controls.sub_cat.invalid) }"
+                                [placeholder]="'Select Subcategory'"
+                                [data]="dropdownList2" [(ngModel)]="selectedItems2"
+                                formControlName="sub_cat" 
+                                [settings]="dropdownSettings2"
+                                (onSelect)="onSubSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                                (onDeSelect)="onSubDeSelect($event)"
+                                id="sub_cat"
+                                >
+                            </ng-multiselect-dropdown>
+                            <div class="box" id="box"></div>
+                            <div *ngIf="isFormSubmitted && form.controls['sub_cat'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['sub_cat'].errors.required">
+                                    Subcategoy Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group input-group-lg">
+                            <label for="Helium">Helium</label>
+                            <ng-multiselect-dropdown 
+                                [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.helium_id.errors) || (!form.controls.helium_id.pristine && form.controls.helium_id.invalid) }"
+                                [placeholder]="'Select Helium Or Non-Helium'"
+                                [settings]="dropdownSettings3"
+                                [data]="dropdownList3" [(ngModel)]="selectedItems3"
+                                formControlName="helium_id"
+                                (onSelect)="onHeliumSelect($event)"
+                                (onDeSelect)="onHeliumDeSelect($event)"
+                                id="helium_id"
+                                >
+                            </ng-multiselect-dropdown>
+                            <div class="box" id="heliumPrice"></div>
+                            <div *ngIf="isFormSubmitted && form.controls['helium_id'].invalid" class="text-danger mt-1">
+                                <div *ngIf="form.controls['helium_id'].errors.required">
+                                    Helium Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info">Create</button>
+                </div>
+                <div class="progress-loader" [hidden]="!loading">
+                <div class="loading-spinner">
+                    <img src="assets/images/loader.png">
+                    <span class="loading-message">Progress {{percentDone}} %</span>
+                </div>
+            </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

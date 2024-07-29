@@ -1,0 +1,18 @@
+li.nav-item.right-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #fff;
+}
+li.nav-item.left-btn {
+    background: #fff;
+}
+li.nav-item.right-btn a.nav-link, li.nav-item.left-btn a.nav-link{color: #000 !important; text-decoration: none; font-weight: 300;}
+.bg-primary {
+    background-color: #456CF3 !important;
+    border-color:  #456CF3 !important;
+}
+nav.navbar.navbar-expand-sm.bg-primary.navbar-dark {
+    height: 70px;
+}
+li h2 {color: #fff;}

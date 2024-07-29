@@ -1,0 +1,37 @@
+.loginform {width: 100%; max-width: 600px;height: 350px; margin: auto;position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;}
+    .logintext {
+        color: #03132a;
+        font-weight: 900;
+        margin-top: 80px;
+    }
+    .card-header{background: #0f5084 !important; border-radius: 0 0 100px 40px;height: 150px;}
+    .card-header img{
+        position: absolute;
+        top: 9%;
+        left: 40%;
+    }
+    .form-control {height: 55px; font-size: 26px !important;}
+    .btn-info {
+        color: #fff;
+        background-color: #339f21;
+        border-color: #339f21;
+        line-height: 1.2;
+        width: 100%;
+        font-size: 20px;
+        height: 55px;
+        max-width: 320px;
+    }
+    .card-body {padding: 0 1.25rem 0 0;}
+    .loginform{    width: 100%;
+        max-width: 800px;
+        height: 492px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    

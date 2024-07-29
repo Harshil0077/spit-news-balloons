@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+    <app-navbar></app-navbar>
+</div>
+<section class="profilepage">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="profileimage">
+                        <img src="{{user.profile_path}}" alt="">
+                        <a class="profileedit" routerLink="/profile-update" routerLinkActive="active"><i class="fa fa-edit"></i></a>
+                    </div>
+                    <div class="profiledetail">
+                        <h1>{{user.name}}</h1>
+                        <h2>{{user.email}}</h2>
+                        <a href="tel:{{user.phone_number}}">{{user.phone_number}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

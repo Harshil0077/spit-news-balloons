@@ -1,0 +1,180 @@
+<nav class="navbar navbar-expand-lg navbar-light" *ngIf="!isUserLoggedIn">
+    <a class="navbar-brand" href="#"><img src="assets/logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" data-target=".navbar collapse">
+      <!-- <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a routerLink="/" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/" class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/" class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/" class="nav-link" href="#">Home</a>
+        </li>
+      </ul> -->
+      <form class="form-inline ml-auto my-lg-0">
+        <div class="cartbtn">
+            <img src="./assets/cart.png" alt="cart">
+            <a routerLink="../cart/{{user.id}}"><span ></span></a>
+        </div>
+        <button type="button" class="loginsignup" (click) = "show()">Login/Signup</button>
+        <div class="login">
+          <img src="./assets/profile-dummy.jpg" alt="">
+        </div>
+      </form>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light" *ngIf="isUserLoggedIn">
+  <a class="navbar-brand" href="#"><img src="assets/logo.png" alt="Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" data-target=".navbar collapse">
+    <form class="form-inline ml-auto my-lg-0">
+      <div class="cartbtn">
+        <a routerLink="/cart/{{user.id}}"><img src="./assets/cart.png" alt="cart">
+          <span class="itemnumber"></span></a>
+      </div>
+      <span class="profilename">{{user.name}}</span>
+      <div class="afterlogin">
+        <div mdbDropdown >
+          <button mdbDropdownToggle type="button"  class="waves-light loginsignup"><img src="{{user.profile_path}}" alt=""></button>
+          <div class="dropdown-menu dropdown-primary">
+            <a class="dropdown-item" routerLink="/profile-detail" class="nav-link" routerLinkActive="active">My Profile</a>
+            <a class="dropdown-item" routerLink="/order-list" class="nav-link" routerLinkActive="active">Recent Orders</a>
+            <a class="dropdown-item" routerLink="/menu/change-password" class="nav-link" routerLinkActive="active">Change Password</a>
+            <div class="divider dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+  <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-body">
+        <div class="modal-content">
+          <div class="row">
+            <div class="col-sm-4" style="padding-right: 0;">
+              <div class="loginimage">
+                <img src="./assets/login-bg.png" alt="">
+              </div>
+            </div>
+            <div class="col-sm-8" style="padding-left: 0;">
+              <div class="bs-example bs-example-tabs">
+                <ul id="myTab" class="nav nav-tabs">
+                  <li id="tab1" class="active tab-style login-shadow "><a href="#signin" class="active show loginbtntext" data-toggle="tab">Log In</a></li>
+                  <li id="tab2" class="tab-style"><a class="signupbtn" href="#signup" data-toggle="tab">Sign Up</a></li>
+                </ul>
+              </div>
+              <div class="modal-body">
+                <div id="myTabContent" class="tab-content">
+                  <div class="tab-pane active in" id="signin">
+                    <h4 class="modal-title">Welcome to Baloon</h4>
+                    <!-- <h3 class="modal-title">New Here? <a href="#">Create an Account</a></h3> -->
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                              <div *ngIf="f.email.errors.required">Email is required</div>
+                              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label>Password</label>
+                          <a href="#" routerLink="/send-email" class="fp">Forgot Password?</a>
+                          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                              <div *ngIf="f.password.errors.required">Password is required</div>
+                              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                          </div>
+                        </div>
+                    <div class="form-group form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                  </form>
+                  </div>
+                  <div class="tab-pane fade" id="signup">
+                    <h4 class="modal-title">Welcome to Baloon</h4>
+                    <h3 class="modal-title">Already have account? <a href="#">Login</a></h3>
+                    <form [formGroup]="signupForm" (ngSubmit)="submitForm()" class="signupform" style="margin-top: 0 !important;">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>Name</label>
+                            <input type="name" formControlName="name" class="form-control" placeholder="Name*" [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+                              <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+                                <div *ngIf="form.name.errors.required">Name is required</div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" formControlName="email" class="form-control" placeholder="Email*" [ngClass]="{ 'is-invalid': submitted && form.email.errors }">
+                              <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+                                <div *ngIf="form.email.errors.required">Email is required</div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" formControlName="phone" class="form-control" placeholder="Phone*" [ngClass]="{ 'is-invalid': submitted && form.phone.errors }">
+                              <div *ngIf="submitted && form.phone.errors" class="invalid-feedback">
+                                <div *ngIf="form.phone.errors.required">Phone is required</div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="icon">Profile Image</label>
+                            <input type="file" (change)="uploadFile($event)" class="form-control" name="icon" [ngClass]="{ 'is-invalid': (submitted && signupForm.controls.icon.errors) || (!signupForm.controls.icon.pristine && signupForm.controls.icon.invalid) }" accept=".png, .jpeg, .jpg">
+                            <div class="invalid-feedback" *ngIf="(submitted && signupForm.controls.icon.errors) || (!signupForm.controls.icon.pristine && signupForm.controls.icon.invalid)">
+                                <div *ngIf="signupForm.controls.icon.errors.required">Profile Image is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && form.password.errors }">
+                            <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+                              <div *ngIf="form.password.errors.required">Password is required</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group text-center">
+                        <button type="submit" class="loginbtn text-center">Sign Up</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 

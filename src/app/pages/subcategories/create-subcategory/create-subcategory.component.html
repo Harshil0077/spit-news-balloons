@@ -1,0 +1,61 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h2>Create Subcategory</h2>
+            </li>
+            <li class="nav-item right-btn">
+                <a href="/pages/subcategories/subcategory-list" routerlink="/pages/subcategories/subcategory-list" class="btn nav-link" ng-reflect-router-link="/pages/subcategories/subcategory-list">Back</a>
+            </li>
+        </ul>
+        </nav>
+        <div style="width: 500px; margin: auto;">
+            <div class="submit-form">
+                <form [formGroup]="form" (ngSubmit)="submitForm()">
+                    
+                <div class="form-group input-group-lg">
+                    <label for="tours">Category</label>
+                    <ng-multiselect-dropdown 
+                        [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.category_id.errors) || (!form.controls.category_id.pristine && form.controls.category_id.invalid) }"
+                        [placeholder]="'Select Category'"
+                        [data]="dropdownList" [(ngModel)]="selectedItems"
+                        formControlName="category_id" 
+                        [settings]="dropdownSettings"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                        id="category_id"
+                        >
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="isFormSubmitted && form.controls['category_id'].invalid" class="text-danger mt-1">
+                        <div *ngIf="form.controls['category_id'].errors.required">
+                            Category Name is required.
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="form-group input-group-lg">
+                    <label for="name">Subcategory Name</label>
+                    <input class="form-control" placeholder="Subcategory Name" formControlName="sub_cat_name" name="Subcategory Name" [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.sub_cat_name.errors) || (!form.controls.sub_cat_name.pristine && form.controls.sub_cat_name.invalid) }">
+                    <div *ngIf="isFormSubmitted && form.controls['sub_cat_name'].invalid" class="text-danger mt-1">
+                        <div *ngIf="form.controls['sub_cat_name'].errors.required">
+                            Subcategory Name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info">Create</button>
+                </div>
+                <div class="progress-loader" [hidden]="!loading">
+                <div class="loading-spinner">
+                    <img src="assets/images/loader.png">
+                    <span class="loading-message">Progress {{percentDone}} %</span>
+                </div>
+            </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

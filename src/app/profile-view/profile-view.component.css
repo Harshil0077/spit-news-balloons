@@ -1,0 +1,31 @@
+
+.card {
+    /* Add shadows to create the "card" effect */
+    text-align: center; padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  section.profilepage {
+    height: 71.3vh;
+}
+.profileedit {position: absolute; top: 0; right:0;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 24px;line-height: 23px;text-align: center;color: #000;}
+.profileimage {position: relative;}
+.profiledetail a, .profiledetail a:hover{font-family: Montserrat SemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;color: #072139; text-decoration: none;
+}
+.profileimage img {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+}

@@ -1,0 +1,42 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <section class="orderlist">
+        <div class="card">
+            <div class="card-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="text-center">Order History</h2>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                        <th style="text-align:center">Order Id</th>
+                                        <th style="text-align:center">Booking Status</th>
+                                        <th style="text-align:center">Status</th>
+                                        <th style="text-align:center">Total</th>
+                                        <th style="text-align:center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let order of order_list | paginate: { itemsPerPage: 10, currentPage: page };  index as i">
+                                            <td style="text-align:center"><span class="ordernumber">#{{order.order_number}}</span></td>
+                                            <td style="text-align:center"><span class="bookingstatus">{{order.booking_status}}</span></td>
+                                            <td style="text-align:center"><span class="status">{{order.status}}</span></td>
+                                            <td style="text-align:center">${{order.total}}</td>
+                                            <td style="text-align:center"><button routerLink="/order-detail/{{order.id}}" class="viewbtn" style="margin-left: 10px"><i class="fa fa-eye"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="pagination">  
+                                    <pagination-controls (pageChange)="page = $event"></pagination-controls>  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>

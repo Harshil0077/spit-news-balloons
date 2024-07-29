@@ -1,0 +1,20 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()"><img src="assets/logo.png" alt=""></a>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions size="small">    
+  </nb-actions>
+  <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+    <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> -->
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+</div>
+

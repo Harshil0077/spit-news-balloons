@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="card">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h2>Events List</h2>
+                </li>
+                <li class="nav-item right-btn">
+                    <a routerLink="../add" class="nav-link" routerLinkActive="active">Add Event</a>
+                 </li>
+            </ul>
+        </nav>
+        <div class="card-body">
+        <div class="panel panel-primary">
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" [(ngModel)]="email" placeholder="Search by name"/>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive" style="min-width: 900px !important;">
+                    
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Event Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let event of events| filter:email | paginate: { itemsPerPage: 10, currentPage: page };  index as i">
+                                <td><span *ngIf="page==1">{{(i+1)}}{{item}}</span>
+                                    <span *ngIf="page>1">{{((page-1)*10)+(i+1)}}{{ item }}</span></td>
+                                <td>{{event.event_name}}</td>
+                                <button routerLink="../update/{{event.id}}" class="btn btn-info" style="margin-left: 10px">Edit</button>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">  
+                        <pagination-controls (pageChange)="page = $event"></pagination-controls>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

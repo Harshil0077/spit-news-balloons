@@ -1,0 +1,87 @@
+
+<div class="container">
+    <app-navbar></app-navbar>
+    <section class="banner">
+        <div class="banner-box">
+          <div class="intro-text">
+            <div class="intro-text-box">
+              <span>Spit News Balloons</span>
+              <h1>Helium Balloons - Click & Collect</h1>
+              <p>When you think of service above cost and an endless offering of the highest quality, think about us! We are a team of reliable and professional balloon experts who you can depend on to make readily available all you balloon instantly after making your orders. We offer flexibility in terms of allowing you to make your order requests online from anywhere and reduce the hassle of coming in store to make your arrangements.</p>
+              <button routerLink="../all-product">View Collection</button>
+            </div>
+          </div>
+          <img src="./assets/banner.png" alt="banner" />
+        </div>
+    </section>
+    <section class="about-us">
+        <div class="about-containt">
+            <div class="intro">
+                <h1>About Us</h1>
+                <p>Spit News Balloons stocks best discounted helium balloons and party supplies! Click and collect in-store!</p>
+            </div>
+            <div class="aboutboxes">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="boloonimage">
+                            <img src="./assets/about-baloon.png" alt="Baloon">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="qualitybox">
+                                    <img src="./assets/quality.png" alt="quality">
+                                    <h2>Instant Pick-up</h2>
+                                    <p>Pick-up helium balloon orders instantly</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="qualitybox">
+                                    <img src="./assets/quality.png" alt="quality">
+                                    <h2>Environmentally Friendly</h2>
+                                    <p>We offer durable and environmentally friendly aluminum foil and qualatex helium balloons</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row item">
+                            <div class="col-sm-6">
+                                <div class="qualitybox">
+                                    <img src="./assets/quality.png" alt="quality">
+                                    <h2>Long Lasting</h2>
+                                    <p>It remains afloat for up to 4-6 weeks and a 1-4 days float period for our regular latex helium balloons</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="qualitybox">
+                                    <img src="./assets/quality.png" alt="quality">
+                                    <h2>Bulk Packs</h2>
+                                    <p>Balloon arrangement or bulk pack is available on request</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <h2>Popular Products</h2>
+        <app-product></app-product>
+    </section>
+    <!-- <section class="gallary">
+        <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+              [animation]="'slide'" [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of slides; let i = index">
+            <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+        </mdb-carousel>
+    </section> -->
+</div>
+<app-footer></app-footer>
+
+

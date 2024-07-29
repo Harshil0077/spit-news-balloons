@@ -1,0 +1,62 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <section class="profile">
+        <div class="card">
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+                <!-- Links -->
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h2>Profile Update</h2>
+                </li>
+                <li class="nav-item right-btn">
+                    <a href="/profile-detail" routerlink="/profile-detail" class="btn nav-link" ng-reflect-router-link="/profile-detail">Back</a>
+                </li>
+                </ul>
+            </nav>
+            <div class="submit-form">
+                <form [formGroup]="form">
+                    <div class="form-group input-group-lg" [hidden]="isShowDiv">
+                        <label for="name">Name</label>
+                        <input class="form-control" placeholder="Name" formControlName="name" disabled name="name" [ngModel]="user?.name">
+                    </div>
+                    <div class="form-group input-group-lg" [hidden]="isNotShowDiv">
+                        <label for="name">Name</label>
+                        <input class="form-control" placeholder="Name" formControlName="name" name="name" [ngModel]="user?.name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group" [hidden]="isShowDiv">
+                        <input type="image" src="{{user.profile_path}}">
+                    </div>
+                    <div class="form-group" [hidden]="isNotShowDiv">
+                        <label for="icon">Change Profile Image</label>
+                        <input type="file" (change)="uploadFile($event)" class="form-control" name="icon" accept=".png, .jpeg, .jpg">
+                    </div>
+                    <div class="form-group input-group-lg" [hidden]="isShowDiv">
+                        <label for="phone">Phone Number</label>
+                        <input class="form-control" placeholder="Phone Number" formControlName="phone_number" disabled name="phone" [ngModel]="user?.phone_number">
+                    </div>
+                    <div class="form-group input-group-lg" [hidden]="isNotShowDiv">
+                        <label for="phone">Phone Number</label>
+                        <input class="form-control" placeholder="phone" formControlName="phone_number" name="phone_number" [ngModel]="user?.phone_number" [ngClass]="{ 'is-invalid': submitted && f.phone_number.errors }">
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone_number.errors.required">phone is required</div>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <button (click)=toggleDisplayDiv() [hidden]="isShowDiv" class="btn btn-info" style="margin-left: 10px;">Update</button>
+                            <button [hidden]="isNotShowDiv" (click)="submitForm()" class="btn btn-info" style="margin-left: 10px;">Save</button>
+                        </div>
+                        <div class="progress-loader" [hidden]="!loading">
+                        <div class="loading-spinner">
+                            <img src="assets/images/favicon.png">
+                            <span class="loading-message">Progress {{percentDone}} %</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>

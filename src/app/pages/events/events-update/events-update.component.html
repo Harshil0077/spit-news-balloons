@@ -1,0 +1,65 @@
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+       <li class="nav-item">
+           <h2>Category Update</h2>
+       </li>
+       <li class="nav-item right-btn">
+        <a href="/pages/events/events-list" routerlink="/pages/events/events-list" class="btn nav-link" ng-reflect-router-link="/pages/events/events-list">Back</a>
+       </li>
+    </ul>
+   </nav>
+  <div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+        <form [formGroup]="form">
+            <div class="form-group input-group-lg" [hidden]="isShowDiv">
+                <label for="name">Event Name</label>
+                <input class="form-control" placeholder="Event Name" formControlName="event_name" disabled name="name" [(ngModel)]="event.event_name">
+            </div>
+            <div class="form-group input-group-lg" [hidden]="isNotShowDiv">
+                <label for="name">Name</label>
+                <input class="form-control" placeholder="Name" formControlName="event_name" name="name" [(ngModel)]="event.event_name" [ngClass]="{ 'is-invalid': submitted && f.event_name.errors }">
+                <div *ngIf="submitted && f.event_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.event_name.errors.required">Event Name is required</div>
+                </div>
+            </div>
+            <div class="form-group input-group-lg" [hidden]="isShowDiv">
+                <label style="display: block;" for="name">Product :-</label>
+                <p style="display: inline-block;" *ngFor="let product of event.products">{{product.product_name}}</p>
+            </div>
+            <div class="form-group input-group-lg" [hidden]="isNotShowDiv">
+                <label for="product">Product</label>
+                <ng-multiselect-dropdown
+                    [ngClass]="{ 'is-invalid': (isFormSubmitted && form.controls.product_ids.errors) || (!form.controls.product_ids.pristine && form.controls.product_ids.invalid) }"
+                    [placeholder]="'Select Product'"
+                    [data]="dropdownList"
+                    [(ngModel)]="selectedItems"
+                    formControlName="product_ids"
+                    [settings]="dropdownSettings"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                    (onDeSelect)="onItemDeSelect($event)"
+                    id="product_ids"
+                    >
+                </ng-multiselect-dropdown>
+                <div *ngIf="isFormSubmitted && form.controls['product_ids'].invalid" class="text-danger mt-1">
+                    <div *ngIf="form.controls['product_ids'].errors.required">
+                        Category Name is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button (click)=toggleDisplayDiv() [hidden]="isShowDiv" class="btn btn-info" style="margin-left: 10px;">Update</button>
+                <button [hidden]="isNotShowDiv" (click)="submitForm()" class="btn btn-info" style="margin-left: 10px;">Save</button>
+            </div>
+            <div class="progress-loader" [hidden]="!loading">
+                <div class="loading-spinner">
+                    <img src="assets/images/loader.png">
+                    <span class="loading-message">Progress {{percentDone}} %</span>
+                </div>
+            </div>
+    </form>
+    </div>
+  </div>

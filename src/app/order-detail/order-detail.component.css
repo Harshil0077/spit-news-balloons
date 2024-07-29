@@ -1,0 +1,44 @@
+.btn-delete-user {
+  width: 60px;
+  text-align: center;
+  box-sizing: content-box;
+  margin:0 10px;
+}
+li.nav-item.right-btn {
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  background: #fff;
+}
+li.nav-item.left-btn {
+  background: #fff;
+}
+li.nav-item.right-btn a.nav-link, li.nav-item.left-btn a.nav-link{color: #000 !important; text-decoration: none; font-weight: 300;}
+.bg-primary {
+  background-color: #456CF3 !important;
+  border-color:  #456CF3 !important;
+}
+li.nav-item {text-align: center; width: 100%;}
+ul.navbar-nav {
+  width: 100%;
+}
+input[type="image"] {
+  max-width: 90px;
+  height: auto;
+}
+li h2 {color: #fff;margin: 0;}
+section.orderdetail{min-height: 700px;}
+.productDetail {
+  border-bottom: 2px solid #ccc;
+  margin: 20px 0;
+}
+.productDetail:last-child {
+  border-bottom: none;
+}
+.productimg {text-align: center;}
+.productimg img{
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  margin: 0 auto 20px;
+}

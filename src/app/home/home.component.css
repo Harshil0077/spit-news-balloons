@@ -1,0 +1,44 @@
+.banner-box {position: relative; height: 600px;}
+.intro-text { width:100%; position: absolute; top:30%; text-align: center; color:#000;}
+.intro-text-box { width: 40%;margin-left: 0;text-align: left;}
+.intro-text-box h1 {font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 26px;line-height: 26px;text-transform: capitalize;color: #072139;}
+.intro-text-box p{font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 18px;line-height: 28px;color: rgba(3, 13, 21, 0.5); text-align: justify;}
+.intro-text-box span {font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 18px;line-height: 23px;letter-spacing: 0.06em;text-transform: uppercase;color: #456CF3;}
+.intro-text-box button {background: #456CF3;box-shadow: 0px 20px 40px rgba(38, 124, 242, 0.15);border-radius: 6px;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 18px;line-height: 23px;text-align: center;color: #EFEFEF; border: none; box-shadow: none; width: 250px;height: 60px;}
+.qualitybox {text-align: center;background: #FFFFFF;border: 1px solid #F0F0F0;box-sizing: border-box;box-shadow: 0px 30px 60px rgba(217, 217, 217, 0.3);border-radius: 13px;padding: 21px; min-height: 330px;}
+.qualitybox img{width: 100%; height: auto; max-width: 60px;}
+.qualitybox h2 {padding:16px 0; font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 24px;line-height: 31px;text-align: center;color: #072139;margin-bottom: 0;}
+.qualitybox  p{font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 16px;line-height: 30px;text-align: center;margin-bottom: 0;}
+.row.item {margin-top: 30px;}
+.about-containt .intro h1, .products h2{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 44px;line-height: 57px;text-align: center;color: #072139;}
+.about-containt .intro p{font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 25px;text-align: center;color: rgba(3, 13, 21, 0.75);}
+section {padding: 70px 0;}
+.banner-box img{width: 100%; height: auto; max-width: 600px; position: absolute; right:100px;z-index: -1;}
+.boloonimage img{width: 100%; height: auto;}
+.intro-text-box button{margin-top: 50px;}
+
+@media only screen and (max-width: 1199px) {
+    .qualitybox {padding: 10px;}
+    .qualitybox h2{padding: 5px 0;}
+    .mat-card-image{max-width: 170px;}
+    .mat-card {max-width: 100% !important;max-height: 250px !important;min-height: 250px !important;}
+    .mat-card-content p{width: 175px;}
+    .banner-box img{max-width: 520px; right: 0;}
+}
+@media only screen and (max-width: 991px) {
+    .intro-text-box {width: 100%;margin-left: 0;text-align: left;background: rgba(255, 255, 255, 0.6);padding: 20px; text-align: center;}
+}
+@media only screen and (max-width: 575px) {
+    .qualitybox {min-height: 240px; padding: 30px;}
+    .row.item{margin-top: 0;}
+    .qualitybox{margin-bottom: 20px;}
+    .boloonimage {text-align: center; margin-bottom: 20px;}
+    .boloonimage img {max-width: 320px; margin: 0 auto;}
+    .intro-text {top: auto; position: relative;}
+    .intro-text-box h1 {font-size: 34px; line-height: 34px;}
+    .intro-text-box button {width: 200px; height: 40px;}
+    .banner-box img {top: 0;}
+    .about-containt .intro h1, .products h2 {font-size: 32px;}
+    .banner-box {height: auto;}
+    section {padding: 20px 0;}
+}

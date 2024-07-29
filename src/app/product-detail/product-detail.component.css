@@ -1,0 +1,87 @@
+.similarproduct h2{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 44px;line-height: 57px;text-align: center;color: #072139; text-align: center;}
+section {padding: 70px 0;}
+.widthdiscount {padding: 5px; width: 137px;height: 59px;background: #B6C6FE;border-radius: 6px;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 30px;line-height: 39px;text-align: center;text-transform: capitalize;color: #072139;margin-right: 15px;}
+.originalprice{font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 25px;line-height: 33px;text-align: center;text-decoration-line: line-through;text-transform: capitalize;color: rgba(7, 33, 57, 0.5);}
+.pricedetail p{font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 18px;line-height: 28px;color: rgba(3, 13, 21, 0.5); padding-top:40px;}
+.sizedetaile h3, .colorname h3 {font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 18px;line-height: 28px;color: #030D15;}
+.sizedetaile ul, .colorname ul{padding: 0; margin: 0;}
+.sizedetaile ul li, .colorname ul li{list-style: none; display: inline-block; margin-right: 15px;}
+.sizedetaile ul li:last-child , .colorname ul li:last-child {margin-right: 0;}
+.sizedetaile ul li button, .colorname ul li button {width: 52px;height: 46px;background: #FFFFFF;border-radius: 6px; border: none;font-family: 'DM Sans'; font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.pricedetail {padding: 20px 0;}
+.detailofproduct h2{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 35px;line-height: 46px;text-transform: capitalize;color: #072139;}
+.form-check-inline input {text-align: center;width: 157px;height: 60px;font-family: DM Sans;font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.form-check-inline {position: relative;}
+.form-check-inline button.plus {position: absolute;top: 16px;left: 10px;background: none;border: none;font-family: DM Sans;font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.form-check-inline button.minus {position: absolute;top:16px;right: 10px;background: none;border: none;font-family: DM Sans;font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;text-align: center;text-transform: capitalize;color: #072139;}
+.addcartbtn {width: 250px;height: 60px;background: #DC3232;box-shadow: 0px 20px 40px rgba(38, 124, 242, 0.15);border-radius: 6px;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 18px;line-height: 23px;text-align: center;color: #EFEFEF; border: none;}
+.cartbtn {display: inline-block; margin-left: 20px;}
+.quantity {padding: 30px 0;}
+.productinfodetail ul {margin: 0;padding: 0;}
+.productinfodetail li{width: 100%;height: 50px;background: #F8F8F8;border-radius: 5px; list-style: none; margin-bottom: 15px; padding: 10px;}
+.productinfodetail li {font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 25px;color: rgba(80, 84, 87, 0.75);}
+.productinfodetail span {font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 25px;float: right;color: #072139;}
+.productdescription {font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 25px;color: rgba(3, 13, 21, 0.75);}
+.productdescription h2{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;color: #072139;}
+.cartbtn {margin-right: 0;}
+section.productdetail img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+}
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  span.price{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 150%;color: #FFA011; float: right;}
+  .mat-card-content button, a.viewdetailbtn{width: 90px; float: right;width: 102px;height: 35px;background: #456CF3;border-radius: 4px; border: none; box-shadow: none;font-family: 'DM Sans';font-style: normal;font-weight: 500;font-size: 14px;color: #FFFFFF;text-decoration: none;text-align: center;line-height: 32px;}
+  .mat-card-content p {display: inline-block; width: 200px; font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 18px;color: rgba(3, 13, 21, 0.75);white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;} 
+  .mat-card-content h3 {font-family: 'Montserrat SemiBold';font-style: normal;font-weight: 600;font-size: 18px;line-height: 22px;color: #072139; text-decoration: none;}
+.cardimg{text-align: center;}
+.widthdiscount input{
+    resize: horizontal;
+    width: 80px;
+    background: none;
+    border: none;
+}
+.cardimg img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 320px;
+}
+.productimg {text-align: center;}
+.productimg img{width: 100%; max-width:320px; margin: 0 auto;}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .cartbtn{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    span.price {float: none;}
+    .mat-card-content button {float: none !important;}
+}
+
+@media only screen and (max-width: 575px) {
+    .mat-card-actions, .mat-card-subtitle, .mat-card-content {text-align: center;}
+    a.viewdetailbtn {width: 100%;
+        max-width: 160px;
+        margin: 0 auto !important;
+        display: block;
+        float: none;}
+    .mat-card-content p{display: block; max-width: 100%; margin: 0 auto 10px;}
+    .pricedetail {text-align:center;}
+    .pricedetail p{width: 100% !important;}
+    .quantity {
+        text-align: center;
+    }
+    .detailofproduct {
+        padding-top: 50px;
+    }
+    .cartbtn {
+        margin-left:0;
+        margin-top: 20px;
+    }
+    section {padding: 20px 0;}
+    .similarproduct h2 {font-size: 28px;line-height: 28px;}
+    .detailofproduct h2 {text-align: center;}
+}

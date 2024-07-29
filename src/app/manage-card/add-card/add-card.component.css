@@ -1,0 +1,15 @@
+.paymentform label{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: #072139;display: block;}
+.paymentform .formgroup{margin-bottom: 20px;}
+.paymentform input{background: #FFFFFF;border-radius: 5px; border: none;height: 50px; width: 100%; padding-left: 10px;}
+.paymentform {background: #F0F7FC;border: 1px solid #EAEAEA;box-sizing: border-box;border-radius: 10px; padding: 30px;}
+.paymentform input::placeholder{font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: rgba(7, 33, 57, 0.2);}
+.paymentmethod h2 span {float: right; font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 20px;line-height: 26px;color: #456CF3;}
+.paymentmethod{ width: 100%; max-width: 445px; margin: 0 auto;}
+.paymentform .formgroup select.form-select {width: 100%;max-width: 100%;margin: 0 !important;padding-left: 10px; background: #fff;font-weight: 500;font-size: 14px;}
+.paymentform input#terms {width: 15px;height: 15px;display: inline-block;vertical-align: middle;margin-right: 5px;}
+.paymentform label.checkbox {display: inline-block !important;width: auto;font-family: 'DM Sans';font-style: normal;font-weight: bold;font-size: 15px;line-height: 20px;color: #072139;}
+.paymentform p {font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 18px;color: rgba(7, 33, 57, 0.5);}
+.paymentform .wrapper{width:200px;padding:20px;height: 150px;}
+ select.form-control {height: 50px !important;border: none;margin-bottom: 20px;}
+ .cardmanage {padding: 83px 0; background-color: #fff;}
+ .addcard {background: #FBB42C; border-radius: 4px;height: 50px; border: none; box-shadow: none; width: 100%;font-family: 'Montserrat', SemiBold;font-style: normal;font-weight: 600;font-size: 18px;line-height: 22px;text-align: center;color: #FFFFFF;}

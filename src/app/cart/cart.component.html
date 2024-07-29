@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+    <app-navbar></app-navbar>
+</div>
+<section class="detailandpayment">
+    <div class="container">
+    <div class="bs-example bs-example-tabs">
+        <ul id="myTab" class="nav nav-tabs">
+            <li id="tab1" class="active tab-style login-shadow "><a href="#shopingbag" class="active show loginbtntext" data-toggle="tab">Shopping Bag</a></li>
+            <li id="tab2" class="tab-style"><a class="signupbtn" href="#" data-toggle="tab">Payment</a></li>
+        </ul>
+    </div>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active in" id="shopingbag">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2>Shopping Cart</h2>
+                    <div class="itemlist">
+                        <div class="item" *ngFor="let item of items; let i = index">
+                            <div class="itemimg">
+                                <img src="{{item.cart_image_url}}" alt="image">
+                            </div>
+                            <div class="itemdetail">
+                                <h2>{{item.product_name}}</h2>
+                                <div class="totalammount">
+                                    <span class="price">$ {{item.total}}</span>
+                                </div>
+                                <div class="quantity">
+                                    <form [formGroup]="cartQnt" class="forgotpassword" style="margin-top: 0 !important;">
+                                        <div class="form-check-inline">
+                                            <input type="text" class="form-control" ngModel="{{item.quantity}}" [ngModelOptions]="{standalone: true}" id="{{item.id}}">
+                                            <button type="button" class="plus" (click)="plus(item.id)"><i class="fa fa-plus"></i></button>
+                                            <button type="button" class="minus" (click)="minus(item.id)"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="subtotalammount">
+                                    <span class="price">$ {{item.sub_total}}</span>
+                                </div>
+                            </div>
+                            <button class="delete" (click)="deleteItem(item.id)"><img src="./assets/cross.png" alt="delete"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="selecteditemdetail">
+                        <h2>Summary</h2>
+                        <div class="summary">
+                        <ul>
+                            <li class="total">Total<span>${{totalAmount || item.cart_total_amount}}</span></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="pickupdetail">
+                        <h2>Pickup Details</h2>
+                        <form [formGroup]="pickUpDetail">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="pickup_date" required (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" [ngClass]="{ 'is-invalid': (isFormSubmittedD && pickUpDetail.controls.pickup_date.errors) || (!pickUpDetail.controls.pickup_date.pristine && pickUpDetail.controls.pickup_date.invalid) }">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                                <div *ngIf="isFormSubmittedD && pickUpDetail.controls['pickup_date'].invalid" class="text-danger mt-1">
+                                    <div *ngIf="pickUpDetail.controls['pickup_date'].errors.required">
+                                        Pickup Date is required.
+                                    </div>
+                                </div>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Time</mat-label>
+                                <select matNativeControl formControlName="pickup_time" required [ngClass]="{ 'is-invalid': (isFormSubmittedD && pickUpDetail.controls.pickup_time.errors) || (!pickUpDetail.controls.pickup_time.pristine && pickUpDetail.controls.pickup_time.invalid) }">
+                                <option value="{{time.time}}"  *ngFor="let time of times">{{time.time}}</option>
+                                </select>
+                                <div *ngIf="isFormSubmittedD && pickUpDetail.controls['pickup_time'].invalid" class="text-danger mt-1">
+                                    <div *ngIf="pickUpDetail.controls['pickup_time'].errors.required">
+                                        Pickup Time is required.
+                                    </div>
+                                </div>
+                            </mat-form-field>
+                        <!-- Basic dropdown -->
+                        </form>
+                        <button href="#payment" class="paymentbtn" >
+                        <div class="bs-example bs-example-tabs">
+                            <ul id="myTab" class="nav nav-tabs">
+                                <li id="tab2" class="tab-style"><button class="signupbtn" [disabled]="!pickUpDetail.valid"  href="#payment" data-toggle="tab">Pay  ${{totalAmount || item.cart_total_amount}}</button></li>
+                            </ul>
+                        </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="payment">
+            <div class="paymentmethod">
+                <h2>Total You have to Pay <span>${{totalAmount || item.cart_total_amount}}</span></h2>
+                
+                <form class="paymentform" [formGroup]="paymentMethod" (ngSubmit)="PayMent()">
+                    <input type="hidden" formControlName="total" [(ngModel)]="totalAmount || item.cart_total_amount" value="{{totalAmount || item.cart_total_amount}}">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="formgroup">
+                                    <label>Card Number</label>
+                                    <input type="text" formControlName="card_number" name="cardnumber" placeholder="xxxxx - xxxx - xxxx - xxxx">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="formgroup">
+                                    <label>Name on card</label>
+                                    <input type="text" placeholder="Name here">
+                                </div>
+                            </div>
+                        <div class="col-sm-12">
+                            
+                                <label>Expiration date</label>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select class="form-select form-control" formControlName="exp_month" aria-label="Default select example" [ngClass]="{ 'is-invalid': (isFormSubmitted && paymentMethod.controls.exp_month.errors) || (!paymentMethod.controls.exp_month.pristine && paymentMethod.controls.exp_month.invalid) }">
+                                            <option selected>MM</option>
+                                            <option *ngFor="let month of months">{{month.month}}</option>
+                                        </select>
+                                        <div *ngIf="isFormSubmitted && paymentMethod.controls['exp_month'].invalid" class="text-danger mt-1">
+                                            <div *ngIf="paymentMethod.controls['exp_month'].errors.required">
+                                                Exp. Month is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select class="form-select form-control" formControlName="exp_year" aria-label="Default select example" [ngClass]="{ 'is-invalid': (isFormSubmitted && paymentMethod.controls.exp_year.errors) || (!paymentMethod.controls.exp_year.pristine && paymentMethod.controls.exp_year.invalid) }">
+                                            <option selected>YY</option>
+                                            <option  *ngFor="let year of years">{{year}}</option>
+                                        </select>
+                                        <div *ngIf="isFormSubmitted && paymentMethod.controls['exp_year'].invalid" class="text-danger mt-1">
+                                            <div *ngIf="paymentMethod.controls['exp_year'].errors.required">
+                                                Exp. Year is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input formControlName="cvc" type="password" placeholder="CVV" maxlength="3">
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="checkbox" id="terms" name="terms" value="">
+                            <label class="checkbox" for="terms"> Securely save this card for faster payments.</label><br>
+                            <p>This transaction you make is totally secure. We don't save your CVV number.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="paymentbtn">Pay Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

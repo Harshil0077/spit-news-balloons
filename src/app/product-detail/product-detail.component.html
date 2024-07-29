@@ -1,0 +1,87 @@
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+    <app-navbar></app-navbar>
+</div>
+<section class="productdetail">
+    <div class="container">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="productimg">
+                        <img src="{{subCatimage}}" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="detailofproduct">
+                        <h2>{{product.product_name}}</h2>
+                            <div class="pricedetail">
+                                <span class="widthdiscount"><input type="text"  formControlName="price" value="${{price}}" ngModel="${{price}}" disabled></span><!-- <span class="originalprice" >${{product.price}}</span> -->
+                                <p style="display: block; width: 600px; font-family: 'DM Sans';font-style: normal;font-weight: normal;font-size: 14px;line-height: 18px;color: rgba(3, 13, 21, 0.75);white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 600px;">{{product.description}}</p>
+                            </div>
+                            <div class="form-group input-group-lg">
+                                <label for="tours">Subcategory</label>
+                                <ng-multiselect-dropdown 
+                                    [placeholder]="'Select Subcategory'"
+                                    [settings]="dropdownSettings"
+                                    [data]="dropdownList" [(ngModel)]="selectedItems"
+                                    formControlName="sub_category_id" 
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                    >
+                                </ng-multiselect-dropdown>
+                            </div>
+                            <div class="form-group input-group-lg">
+                                <label for="tours">Helium or Non-Helilum</label>
+                                <ng-multiselect-dropdown 
+                                    [placeholder]="'Select Helium or Non-Helilum'"
+                                    [settings]="dropdownSettings2"
+                                    [data]="dropdownList2" [(ngModel)]="selectedItems2"
+                                    formControlName="helium_airfilled_id" 
+                                    (onSelect)="onHeliumSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                    >
+                                </ng-multiselect-dropdown>
+                            </div>
+                        
+                            <div class="quantity">
+                                <div class="form-check-inline">
+                                    <input type="text" class="form-control" formControlName="quantity" [(ngModel)]="inputnumber">
+                                    <button class="plus" (click)="plus()"><i class="fa fa-plus"></i></button>
+                                    <button class="minus" (click)="minus()"><i class="fa fa-minus"></i></button>
+                                </div>
+                                <div class="cartbtn" [hidden]="isShowDiv">
+                                    <button (click)="submitForm()" class="addcartbtn">Add Cart</button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="similarproduct">
+    <h2>Similar Product</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" mx-auto my-5 *ngFor="let similorProduct of similorProducts">
+                <div class="itemcard" >
+                    <a href="/view/{{similorProduct.product_id}}">
+                        <mat-card class="example-card">
+                            <div class="cardimg">
+                                <p><img src="{{similorProduct.product_main_image}}" alt="Baloon"></p>
+                            </div>
+                        </mat-card>
+                        </a>
+                    <mat-card-content>
+                        <h3>{{similorProduct.product_name}} <span class="price">{{similorProduct.price}}</span></h3>
+                        <p>{{similorProduct.description}} </p>
+                        <a class="viewdetailbtn" href="/view/{{similorProduct.product_id}}">View Details</a>
+                    </mat-card-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

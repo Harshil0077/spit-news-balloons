@@ -1,0 +1,12 @@
+.thankmsg {
+    text-align: center;
+}
+.thankmsg h1{color: #4bb543;}
+.modal-body {
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 100px;
+}
+.modal-title span {
+    content: "\263A";
+  }

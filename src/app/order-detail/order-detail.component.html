@@ -1,0 +1,61 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <section class="orderdetail">
+        <div class="card">
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                  <h2 class="text-center">Order Detail</h2>
+                  </li>
+                </ul>
+            </nav>
+            <div class="card-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        
+                        <div class="panel-body">
+                            <div class="productDetail" *ngFor="let order of orders">
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="item-card">
+                                      <div class="productimg">
+                                        <img src="{{order.order_image_url}}" alt="Baloon">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <div class="item-card">
+                                      <div class="prodetail">
+                                        <h1>{{order.product_name}}</h1>
+                                        <h2><b>Category :</b>{{order.category_name}}</h2><h2><b>Subategory :</b>{{order.sub_cat_name}}</h2>
+                                        <h2><b>Quantity :</b>{{order.quantity}}</h2>
+                                        <h2><b>Helium/Non Helium:</b> {{ order.helium_airfilled_id == 1 ? 'Heliums' : 'Non-Heliums' }}</h2>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="pickupdetails">
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                      <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+                                        <ul class="navbar-nav">
+                                          <li class="nav-item">
+                                          <h2 class="text-center">Pickup Details</h2>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                      <h2><b>Pickup Date:</b>{{orderPick.pickup_date}}</h2>
+                                      <h2><b>Pickup time:</b>{{orderPick.pickup_time}}</h2>
+                                      <h1><b>Total :</b>{{this.allTotal}}</h1>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>

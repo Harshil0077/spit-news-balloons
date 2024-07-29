@@ -1,0 +1,52 @@
+.card {padding:20px;}
+
+li.nav-item.right-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #fff;
+}
+li.nav-item.left-btn {
+    background: #fff;
+}
+li.nav-item.right-btn a.nav-link, li.nav-item.left-btn a.nav-link{color: #000 !important; text-decoration: none; font-weight: 300;}
+.bg-primary {
+    background-color: #456CF3 !important;
+    border-color:  #456CF3 !important;
+}
+nav.navbar.navbar-expand-sm.bg-primary.navbar-dark {
+    height: 70px;
+}
+th{
+    width: 20%;
+}
+li h2 {color: #fff;margin: 0;}
+.loading-spinner{
+    background-color: #0000001f;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+}
+.submit-form {margin-top: 20px;}
+.loading-spinner img{
+    align-self: end;
+    margin: 0 auto;
+  }
+  section.profile {
+    min-height: 660px;
+  }
+.loading-message{
+    text-align: center;
+    align-self: start;
+}
+.mat-dialog-container {background-color: #fff !important;}
+input[type="image"] {
+    width: 100%;
+    height: auto;
+    max-width: 260px;
+  }

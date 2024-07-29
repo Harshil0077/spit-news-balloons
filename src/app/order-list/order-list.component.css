@@ -1,0 +1,42 @@
+.btn-delete-user {
+  width: 60px;
+  text-align: center;
+  box-sizing: content-box;
+  margin:0 10px;
+}
+li.nav-item.right-btn {
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  background: #fff;
+}
+li.nav-item.left-btn {
+  background: #fff;
+}
+li.nav-item.right-btn a.nav-link, li.nav-item.left-btn a.nav-link{color: #000 !important; text-decoration: none; font-weight: 300;}
+.bg-primary {
+  background-color: #456CF3 !important;
+  border-color:  #456CF3 !important;
+}
+input[type="image"] {
+  max-width: 90px;
+  height: auto;
+}
+li h2 {color: #fff;margin: 0;}
+section.orderlist{min-height: 700px;}
+ 
+th {background-color: #456CF3; color: #fff;}
+table {margin-top: 20px;}
+/* .ordernumber { background-color: #fdf0fa;padding: 4px; border-radius: 4px; width: auto;}
+.bookingstatus { background-color: #fdf0fa;padding: 4px; border-radius: 4px; width: auto;}
+.status{ background-color: #fdf0fa;padding: 4px; border-radius: 4px; width: auto;} */
+button.viewbtn {
+  border: none;
+  background: none;
+  margin: 0 !important;
+  padding: 0;
+}
+button i.fa.fa-eye {
+  font-size: 34px;
+  color: #456CF3;
+}

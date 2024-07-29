@@ -1,0 +1,21 @@
+<section class="send">
+<div class="container">
+  <app-navbar></app-navbar>
+    <div class="card">
+      <h1 mat-dialog-title style="text-align: center;background-color: #456CF3;padding: 10px;font-size: 20px; color: #fff;">Send Email</h1>
+        <form [formGroup]="mailForm" (ngSubmit)="sendMail()" class="forgotpassword" style="margin-top: 0 !important;">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Email*" [ngClass]="{ 'is-invalid': submitted && p.email.errors }">
+                <div *ngIf="submitted && p.email.errors" class="invalid-feedback">
+                  <div *ngIf="p.email.errors.required">Email is required</div>
+                </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="loginbtn text-center">Save</button>
+            </div>
+          </form>
+    </div>
+</div>
+</section>
+<app-footer></app-footer>
